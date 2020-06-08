@@ -1,0 +1,417 @@
+Analysis & Synthesis report for Zafer_Attal
+Mon May 29 12:16:08 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon May 29 12:16:08 2017        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; Zafer_Attal                                  ;
+; Top-level Entity Name              ; Zafer_Attal                                  ;
+; Family                             ; Cyclone III                                  ;
+; Total logic elements               ; 134                                          ;
+;     Total combinational functions  ; 134                                          ;
+;     Dedicated logic registers      ; 13                                           ;
+; Total registers                    ; 13                                           ;
+; Total pins                         ; 21                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; Zafer_Attal        ; Zafer_Attal        ;
+; Family name                                                                ; Cyclone III        ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                   ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+
+; Zafer_Attal.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/Zafer_Attal.bdf      ;
+; decoder.vhd                      ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/decoder.vhd          ;
+; muxtwoonefourbit.vhd             ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/muxtwoonefourbit.vhd ;
+; alu_schematic.bdf                ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/alu_schematic.bdf    ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/alu.vhd              ;
+; mux.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/mux.vhd              ;
+; registerr.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/registerr.vhd        ;
+; lls.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/lls.vhd              ;
+; lrs.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/lrs.vhd              ;
+; ars.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/ars.vhd              ;
+; fsm.vhd                          ; yes             ; Auto-Found VHDL File                     ; C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/fsm.vhd              ;
++----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 134          ;
+;                                             ;              ;
+; Total combinational functions               ; 134          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 76           ;
+;     -- 3 input functions                    ; 43           ;
+;     -- <=2 input functions                  ; 15           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 130          ;
+;     -- arithmetic mode                      ; 4            ;
+;                                             ;              ;
+; Total registers                             ; 13           ;
+;     -- Dedicated logic registers            ; 13           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 21           ;
+; Maximum fan-out node                        ; MOP[3]~input ;
+; Maximum fan-out                             ; 16           ;
+; Total fan-out                               ; 530          ;
+; Average fan-out                             ; 2.80         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |Zafer_Attal                ; 134 (0)           ; 13 (0)       ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |Zafer_Attal                                     ; work         ;
+;    |Decoder:inst4|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|Decoder:inst4                       ;              ;
+;    |FSM:inst|               ; 64 (64)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|FSM:inst                            ;              ;
+;    |alu_schematic:inst1|    ; 59 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|alu_schematic:inst1                 ;              ;
+;       |alu:inst|            ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|alu_schematic:inst1|alu:inst        ;              ;
+;       |mux:inst4|           ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|alu_schematic:inst1|mux:inst4       ;              ;
+;       |registerr:inst5|     ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|alu_schematic:inst1|registerr:inst5 ;              ;
+;       |registerr:inst6|     ; 1 (1)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|alu_schematic:inst1|registerr:inst6 ;              ;
+;    |muxtwoonefourbit:inst5| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Zafer_Attal|muxtwoonefourbit:inst5              ;              ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; FSM:inst|out_state[0]                               ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|out_state[1]                               ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|out_state[2]                               ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Input_Select[0]                            ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Input_Select[2]                            ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Input_Select[1]                            ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|ALUOP[0]                                   ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|ALUOP[1]                                   ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Cin                                        ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|ALUOP[2]                                   ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Reset                                      ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Load_B                                     ; FSM:inst|Load_A     ; yes                    ;
+; FSM:inst|Load_A                                     ; FSM:inst|Load_A     ; yes                    ;
+; Number of user-specified and inferred latches = 13  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 13    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; FSM:inst|y_present[0]                  ; 13      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Zafer_Attal|alu_schematic:inst1|registerr:inst5|Output[2] ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Zafer_Attal|alu_schematic:inst1|registerr:inst6|Output[3] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Zafer_Attal|FSM:inst|Load_B                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Zafer_Attal|alu_schematic:inst1|alu:inst|Add0             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Zafer_Attal|alu_schematic:inst1|alu:inst|Add0             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon May 29 12:15:49 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Zafer_Attal -c Zafer_Attal
+Info: Found 1 design units, including 1 entities, in source file zafer_attal.bdf
+    Info: Found entity 1: Zafer_Attal
+Info: Elaborating entity "Zafer_Attal" for the top level hierarchy
+Warning: Pin "HEX" is missing source
+Warning: Pin "1" not connected
+Warning: Primitive "NOT" of instance "inst6" not used
+Warning: Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Decoder-Behavioral
+    Info: Found entity 1: Decoder
+Info: Elaborating entity "Decoder" for hierarchy "Decoder:inst4"
+Warning: Using design file muxtwoonefourbit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: muxtwoonefourbit-Behavioral
+    Info: Found entity 1: muxtwoonefourbit
+Info: Elaborating entity "muxtwoonefourbit" for hierarchy "muxtwoonefourbit:inst5"
+Warning: Using design file alu_schematic.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: alu_schematic
+Info: Elaborating entity "ALU_SCHEMATIC" for hierarchy "ALU_SCHEMATIC:inst1"
+Warning: Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: alu-Behavioral
+    Info: Found entity 1: alu
+Info: Elaborating entity "alu" for hierarchy "ALU_SCHEMATIC:inst1|alu:inst"
+Warning (10492): VHDL Process Statement warning at alu.vhd(29): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(30): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(32): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(33): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(35): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(36): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(38): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(39): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(41): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(42): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(44): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(45): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(47): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(48): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(50): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at alu.vhd(51): signal "Outputt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Entity "mux" obtained from "C:/Users/Zafer/Desktop/zafer calculator - Copy/Calculator/mux.vhd" instead of from Quartus II megafunction library
+Warning: Using design file mux.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: mux-Behavior
+    Info: Found entity 1: mux
+Info: Elaborating entity "mux" for hierarchy "ALU_SCHEMATIC:inst1|mux:inst4"
+Warning: Using design file registerr.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: registerr-Behavioral
+    Info: Found entity 1: registerr
+Info: Elaborating entity "registerr" for hierarchy "ALU_SCHEMATIC:inst1|registerr:inst5"
+Warning: Using design file lls.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lls-Behavioral
+    Info: Found entity 1: lls
+Info: Elaborating entity "lls" for hierarchy "ALU_SCHEMATIC:inst1|lls:inst2"
+Warning: Using design file lrs.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lrs-Behavioral
+    Info: Found entity 1: lrs
+Info: Elaborating entity "lrs" for hierarchy "ALU_SCHEMATIC:inst1|lrs:inst3"
+Warning: Using design file ars.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ars-Behavioral
+    Info: Found entity 1: ars
+Info: Elaborating entity "ars" for hierarchy "ALU_SCHEMATIC:inst1|ars:inst1"
+Warning: Using design file fsm.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: FSM-Behavior
+    Info: Found entity 1: FSM
+Info: Elaborating entity "FSM" for hierarchy "FSM:inst"
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "out_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "Input_Select", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "Load_A", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "Load_B", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "Cin", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "ALUOP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at fsm.vhd(64): inferring latch(es) for signal or variable "Reset", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Reset" at fsm.vhd(64)
+Info (10041): Inferred latch for "ALUOP[0]" at fsm.vhd(64)
+Info (10041): Inferred latch for "ALUOP[1]" at fsm.vhd(64)
+Info (10041): Inferred latch for "ALUOP[2]" at fsm.vhd(64)
+Info (10041): Inferred latch for "Cin" at fsm.vhd(64)
+Info (10041): Inferred latch for "Load_B" at fsm.vhd(64)
+Info (10041): Inferred latch for "Load_A" at fsm.vhd(64)
+Info (10041): Inferred latch for "Input_Select[0]" at fsm.vhd(64)
+Info (10041): Inferred latch for "Input_Select[1]" at fsm.vhd(64)
+Info (10041): Inferred latch for "Input_Select[2]" at fsm.vhd(64)
+Info (10041): Inferred latch for "out_state[0]" at fsm.vhd(64)
+Info (10041): Inferred latch for "out_state[1]" at fsm.vhd(64)
+Info (10041): Inferred latch for "out_state[2]" at fsm.vhd(64)
+Info (10041): Inferred latch for "out_state[3]" at fsm.vhd(64)
+Warning: Latch FSM:inst|out_state[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|out_state[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|out_state[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Reset has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Input_Select[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Input_Select[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Input_Select[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|ALUOP[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|ALUOP[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Cin has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|ALUOP[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Load_B has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Warning: Latch FSM:inst|Load_A has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal FSM:inst|y_present[4]
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX" is stuck at GND
+    Warning (13410): Pin "Display[0]" is stuck at VCC
+Info: Timing-Driven Synthesis is running
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "1"
+Info: Implemented 158 device resources after synthesis - the final resource count might be different
+    Info: Implemented 12 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 137 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 266 megabytes
+    Info: Processing ended: Mon May 29 12:16:08 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:04
+
+

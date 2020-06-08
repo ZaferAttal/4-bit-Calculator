@@ -1,0 +1,465 @@
+Classic Timing Analyzer report for FSM
+Mon May 29 12:07:51 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'Clock'
+  7. Clock Hold: 'Clock'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                  ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+----------------+-----------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                                    ; From           ; To                    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+----------------+-----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 4.009 ns                                       ; MOP[0]         ; Input_Select[2]$latch ; --         ; Clock    ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 11.067 ns                                      ; ALUOP[2]$latch ; ALUOP[2]              ; Clock      ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 0.630 ns                                       ; MOP[3]         ; ALUOP[1]$latch        ; --         ; Clock    ; 0            ;
+; Clock Setup: 'Clock'         ; N/A                                      ; None          ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2]   ; y_present[3]          ; Clock      ; Clock    ; 0            ;
+; Clock Hold: 'Clock'          ; Not operational: Clock Skew > Data Delay ; None          ; N/A                                            ; y_present[2]   ; out_state[0]$latch    ; Clock      ; Clock    ; 65           ;
+; Total number of failed paths ;                                          ;               ;                                                ;                ;                       ;            ;          ; 65           ;
++------------------------------+------------------------------------------+---------------+------------------------------------------------+----------------+-----------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clock'                                                                                                                                                                               ;
++-------+------------------------------------------------+--------------+----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From         ; To             ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------+----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2] ; y_present[3]   ; Clock      ; Clock    ; None                        ; None                      ; 1.443 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; y_present[2]   ; Clock      ; Clock    ; None                        ; None                      ; 1.379 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; y_present[2]   ; Clock      ; Clock    ; None                        ; None                      ; 1.298 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; y_present[3]   ; Clock      ; Clock    ; None                        ; None                      ; 1.279 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[4] ; y_present[3]   ; Clock      ; Clock    ; None                        ; None                      ; 1.248 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; y_present[3]   ; Clock      ; Clock    ; None                        ; None                      ; 1.078 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[0] ; y_present[3]   ; Clock      ; Clock    ; None                        ; None                      ; 1.066 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[0] ; y_present[2]   ; Clock      ; Clock    ; None                        ; None                      ; 1.049 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2] ; y_present[2]   ; Clock      ; Clock    ; None                        ; None                      ; 1.012 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2] ; y_present[0]   ; Clock      ; Clock    ; None                        ; None                      ; 0.984 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; y_present[4]   ; Clock      ; Clock    ; None                        ; None                      ; 0.978 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; y_present[1]   ; Clock      ; Clock    ; None                        ; None                      ; 0.901 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[4] ; y_present[1]   ; Clock      ; Clock    ; None                        ; None                      ; 0.898 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; y_present[4]   ; Clock      ; Clock    ; None                        ; None                      ; 0.897 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[4] ; y_present[2]   ; Clock      ; Clock    ; None                        ; None                      ; 0.849 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[0] ; y_present[1]   ; Clock      ; Clock    ; None                        ; None                      ; 0.830 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[0] ; y_present[4]   ; Clock      ; Clock    ; None                        ; None                      ; 0.825 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[4] ; y_present[0]   ; Clock      ; Clock    ; None                        ; None                      ; 0.789 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; y_present[0]   ; Clock      ; Clock    ; None                        ; None                      ; 0.766 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; y_present[0]   ; Clock      ; Clock    ; None                        ; None                      ; 0.604 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2] ; y_present[4]   ; Clock      ; Clock    ; None                        ; None                      ; 0.603 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[2] ; y_present[1]   ; Clock      ; Clock    ; None                        ; None                      ; 0.599 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[4] ; y_present[4]   ; Clock      ; Clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; y_present[1]   ; Clock      ; Clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[0] ; y_present[0]   ; Clock      ; Clock    ; None                        ; None                      ; 0.488 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; ALUOP[2]$latch ; Clock      ; Clock    ; None                        ; None                      ; 2.550 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; ALUOP[2]$latch ; Clock      ; Clock    ; None                        ; None                      ; 2.469 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[1] ; Load_A$latch   ; Clock      ; Clock    ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 500.00 MHz ( period = 2.000 ns ) ; y_present[3] ; Load_A$latch   ; Clock      ; Clock    ; None                        ; None                      ; 2.373 ns                ;
++-------+------------------------------------------------+--------------+----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'Clock'                                                                                                                                                                          ;
++------------------------------------------+--------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From         ; To                    ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+--------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; out_state[0]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 0.829 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; out_state[2]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 0.832 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; out_state[1]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 0.997 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; ALUOP[0]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.036 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Cin$latch             ; Clock      ; Clock    ; None                       ; None                       ; 1.062 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; ALUOP[0]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.122 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; out_state[1]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.177 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; out_state[1]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.191 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; ALUOP[0]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.199 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; out_state[0]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.203 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; out_state[2]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.202 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; out_state[2]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.204 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; out_state[0]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.216 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; out_state[2]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.216 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Cin$latch             ; Clock      ; Clock    ; None                       ; None                       ; 1.218 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; out_state[1]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.235 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; out_state[0]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.372 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; out_state[0]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.373 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; out_state[2]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.375 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; out_state[1]$latch    ; Clock      ; Clock    ; None                       ; None                       ; 1.376 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Input_Select[2]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Cin$latch             ; Clock      ; Clock    ; None                       ; None                       ; 1.417 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Input_Select[1]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.395 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; ALUOP[1]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.489 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Cin$latch             ; Clock      ; Clock    ; None                       ; None                       ; 1.501 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Input_Select[2]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.495 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Cin$latch             ; Clock      ; Clock    ; None                       ; None                       ; 1.516 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Input_Select[1]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.553 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Input_Select[1]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.558 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Input_Select[0]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.545 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Reset$latch           ; Clock      ; Clock    ; None                       ; None                       ; 1.554 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Input_Select[1]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.595 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; ALUOP[1]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.652 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Input_Select[2]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.650 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Input_Select[2]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.654 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; ALUOP[1]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.689 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; ALUOP[0]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.695 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Input_Select[0]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.708 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Reset$latch           ; Clock      ; Clock    ; None                       ; None                       ; 1.717 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Input_Select[0]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.745 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Reset$latch           ; Clock      ; Clock    ; None                       ; None                       ; 1.754 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Load_B$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.772 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; ALUOP[0]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.868 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Input_Select[2]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.877 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; ALUOP[1]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 1.938 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Input_Select[1]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.925 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Load_B$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.899 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Load_A$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.924 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; Load_A$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.956 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Load_B$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.946 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Load_A$latch          ; Clock      ; Clock    ; None                       ; None                       ; 1.968 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; ALUOP[1]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.019 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Input_Select[0]$latch ; Clock      ; Clock    ; None                       ; None                       ; 1.994 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Reset$latch           ; Clock      ; Clock    ; None                       ; None                       ; 2.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; ALUOP[2]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.020 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[4] ; Load_B$latch          ; Clock      ; Clock    ; None                       ; None                       ; 2.043 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; Load_B$latch          ; Clock      ; Clock    ; None                       ; None                       ; 2.045 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Input_Select[0]$latch ; Clock      ; Clock    ; None                       ; None                       ; 2.075 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Reset$latch           ; Clock      ; Clock    ; None                       ; None                       ; 2.084 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; Load_A$latch          ; Clock      ; Clock    ; None                       ; None                       ; 2.087 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; Load_A$latch          ; Clock      ; Clock    ; None                       ; None                       ; 2.169 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[2] ; ALUOP[2]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.183 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[0] ; ALUOP[2]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.220 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[3] ; ALUOP[2]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.469 ns                 ;
+; Not operational: Clock Skew > Data Delay ; y_present[1] ; ALUOP[2]$latch        ; Clock      ; Clock    ; None                       ; None                       ; 2.550 ns                 ;
++------------------------------------------+--------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+--------+-----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                    ; To Clock ;
++-------+--------------+------------+--------+-----------------------+----------+
+; N/A   ; None         ; 4.009 ns   ; MOP[0] ; Input_Select[2]$latch ; Clock    ;
+; N/A   ; None         ; 3.713 ns   ; MOP[2] ; Input_Select[2]$latch ; Clock    ;
+; N/A   ; None         ; 3.637 ns   ; MOP[0] ; Load_A$latch          ; Clock    ;
+; N/A   ; None         ; 3.534 ns   ; MOP[1] ; Load_A$latch          ; Clock    ;
+; N/A   ; None         ; 3.482 ns   ; MOP[1] ; Input_Select[2]$latch ; Clock    ;
+; N/A   ; None         ; 3.256 ns   ; MOP[2] ; Load_A$latch          ; Clock    ;
+; N/A   ; None         ; 3.137 ns   ; MOP[3] ; Load_A$latch          ; Clock    ;
+; N/A   ; None         ; 3.121 ns   ; MOP[0] ; Input_Select[1]$latch ; Clock    ;
+; N/A   ; None         ; 3.096 ns   ; MOP[3] ; Input_Select[2]$latch ; Clock    ;
+; N/A   ; None         ; 2.753 ns   ; MOP[1] ; Input_Select[1]$latch ; Clock    ;
+; N/A   ; None         ; 2.622 ns   ; MOP[2] ; Input_Select[1]$latch ; Clock    ;
+; N/A   ; None         ; 2.604 ns   ; MOP[0] ; ALUOP[2]$latch        ; Clock    ;
+; N/A   ; None         ; 2.493 ns   ; MOP[3] ; Input_Select[1]$latch ; Clock    ;
+; N/A   ; None         ; 2.308 ns   ; MOP[2] ; ALUOP[2]$latch        ; Clock    ;
+; N/A   ; None         ; 2.077 ns   ; MOP[1] ; ALUOP[2]$latch        ; Clock    ;
+; N/A   ; None         ; 2.025 ns   ; MOP[0] ; Load_B$latch          ; Clock    ;
+; N/A   ; None         ; 2.005 ns   ; MOP[1] ; Load_B$latch          ; Clock    ;
+; N/A   ; None         ; 1.691 ns   ; MOP[3] ; ALUOP[2]$latch        ; Clock    ;
+; N/A   ; None         ; 1.629 ns   ; MOP[2] ; Reset$latch           ; Clock    ;
+; N/A   ; None         ; 1.613 ns   ; MOP[0] ; ALUOP[0]$latch        ; Clock    ;
+; N/A   ; None         ; 1.608 ns   ; MOP[3] ; Load_B$latch          ; Clock    ;
+; N/A   ; None         ; 1.597 ns   ; MOP[2] ; Load_B$latch          ; Clock    ;
+; N/A   ; None         ; 1.399 ns   ; MOP[2] ; Cin$latch             ; Clock    ;
+; N/A   ; None         ; 1.392 ns   ; MOP[0] ; Reset$latch           ; Clock    ;
+; N/A   ; None         ; 1.337 ns   ; MOP[1] ; Cin$latch             ; Clock    ;
+; N/A   ; None         ; 1.221 ns   ; MOP[1] ; ALUOP[0]$latch        ; Clock    ;
+; N/A   ; None         ; 1.154 ns   ; MOP[0] ; Cin$latch             ; Clock    ;
+; N/A   ; None         ; 1.069 ns   ; MOP[0] ; ALUOP[1]$latch        ; Clock    ;
+; N/A   ; None         ; 1.054 ns   ; MOP[2] ; Input_Select[0]$latch ; Clock    ;
+; N/A   ; None         ; 1.044 ns   ; MOP[3] ; Reset$latch           ; Clock    ;
+; N/A   ; None         ; 1.008 ns   ; MOP[3] ; ALUOP[0]$latch        ; Clock    ;
+; N/A   ; None         ; 0.979 ns   ; MOP[3] ; Cin$latch             ; Clock    ;
+; N/A   ; None         ; 0.870 ns   ; MOP[2] ; ALUOP[1]$latch        ; Clock    ;
+; N/A   ; None         ; 0.865 ns   ; MOP[1] ; Reset$latch           ; Clock    ;
+; N/A   ; None         ; 0.861 ns   ; MOP[1] ; Input_Select[0]$latch ; Clock    ;
+; N/A   ; None         ; 0.841 ns   ; MOP[2] ; ALUOP[0]$latch        ; Clock    ;
+; N/A   ; None         ; 0.802 ns   ; MOP[1] ; ALUOP[1]$latch        ; Clock    ;
+; N/A   ; None         ; 0.681 ns   ; MOP[3] ; Input_Select[0]$latch ; Clock    ;
+; N/A   ; None         ; 0.464 ns   ; MOP[3] ; ALUOP[1]$latch        ; Clock    ;
++-------+--------------+------------+--------+-----------------------+----------+
+
+
++------------------------------------------------------------------------------------------+
+; tco                                                                                      ;
++-------+--------------+------------+-----------------------+-----------------+------------+
+; Slack ; Required tco ; Actual tco ; From                  ; To              ; From Clock ;
++-------+--------------+------------+-----------------------+-----------------+------------+
+; N/A   ; None         ; 11.067 ns  ; ALUOP[2]$latch        ; ALUOP[2]        ; Clock      ;
+; N/A   ; None         ; 10.664 ns  ; Reset$latch           ; Reset           ; Clock      ;
+; N/A   ; None         ; 10.638 ns  ; ALUOP[0]$latch        ; ALUOP[0]        ; Clock      ;
+; N/A   ; None         ; 10.248 ns  ; Input_Select[1]$latch ; Input_Select[1] ; Clock      ;
+; N/A   ; None         ; 10.170 ns  ; out_state[1]$latch    ; out_state[1]    ; Clock      ;
+; N/A   ; None         ; 10.144 ns  ; ALUOP[1]$latch        ; ALUOP[1]        ; Clock      ;
+; N/A   ; None         ; 10.059 ns  ; Load_B$latch          ; Load_B          ; Clock      ;
+; N/A   ; None         ; 10.013 ns  ; out_state[0]$latch    ; out_state[0]    ; Clock      ;
+; N/A   ; None         ; 10.003 ns  ; out_state[2]$latch    ; out_state[2]    ; Clock      ;
+; N/A   ; None         ; 9.925 ns   ; Input_Select[2]$latch ; Input_Select[2] ; Clock      ;
+; N/A   ; None         ; 9.620 ns   ; Load_A$latch          ; Load_A          ; Clock      ;
+; N/A   ; None         ; 8.737 ns   ; Cin$latch             ; Cin             ; Clock      ;
+; N/A   ; None         ; 8.692 ns   ; Input_Select[0]$latch ; Input_Select[0] ; Clock      ;
++-------+--------------+------------+-----------------------+-----------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                    ; To Clock ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+; N/A           ; None        ; 0.630 ns  ; MOP[3] ; ALUOP[1]$latch        ; Clock    ;
+; N/A           ; None        ; 0.397 ns  ; MOP[3] ; ALUOP[0]$latch        ; Clock    ;
+; N/A           ; None        ; 0.397 ns  ; MOP[3] ; Input_Select[0]$latch ; Clock    ;
+; N/A           ; None        ; 0.351 ns  ; MOP[1] ; Input_Select[1]$latch ; Clock    ;
+; N/A           ; None        ; 0.301 ns  ; MOP[2] ; ALUOP[0]$latch        ; Clock    ;
+; N/A           ; None        ; 0.292 ns  ; MOP[1] ; ALUOP[1]$latch        ; Clock    ;
+; N/A           ; None        ; 0.249 ns  ; MOP[3] ; ALUOP[2]$latch        ; Clock    ;
+; N/A           ; None        ; 0.224 ns  ; MOP[2] ; ALUOP[1]$latch        ; Clock    ;
+; N/A           ; None        ; 0.217 ns  ; MOP[1] ; Input_Select[0]$latch ; Clock    ;
+; N/A           ; None        ; 0.210 ns  ; MOP[1] ; Reset$latch           ; Clock    ;
+; N/A           ; None        ; 0.169 ns  ; MOP[3] ; Cin$latch             ; Clock    ;
+; N/A           ; None        ; 0.107 ns  ; MOP[2] ; ALUOP[2]$latch        ; Clock    ;
+; N/A           ; None        ; 0.031 ns  ; MOP[3] ; Reset$latch           ; Clock    ;
+; N/A           ; None        ; 0.025 ns  ; MOP[0] ; ALUOP[1]$latch        ; Clock    ;
+; N/A           ; None        ; 0.024 ns  ; MOP[2] ; Input_Select[0]$latch ; Clock    ;
+; N/A           ; None        ; -0.006 ns ; MOP[0] ; Cin$latch             ; Clock    ;
+; N/A           ; None        ; -0.057 ns ; MOP[1] ; ALUOP[2]$latch        ; Clock    ;
+; N/A           ; None        ; -0.079 ns ; MOP[1] ; ALUOP[0]$latch        ; Clock    ;
+; N/A           ; None        ; -0.189 ns ; MOP[1] ; Cin$latch             ; Clock    ;
+; N/A           ; None        ; -0.201 ns ; MOP[2] ; Load_B$latch          ; Clock    ;
+; N/A           ; None        ; -0.251 ns ; MOP[2] ; Cin$latch             ; Clock    ;
+; N/A           ; None        ; -0.299 ns ; MOP[1] ; Load_B$latch          ; Clock    ;
+; N/A           ; None        ; -0.317 ns ; MOP[0] ; Reset$latch           ; Clock    ;
+; N/A           ; None        ; -0.324 ns ; MOP[3] ; Load_B$latch          ; Clock    ;
+; N/A           ; None        ; -0.392 ns ; MOP[0] ; ALUOP[2]$latch        ; Clock    ;
+; N/A           ; None        ; -0.471 ns ; MOP[0] ; ALUOP[0]$latch        ; Clock    ;
+; N/A           ; None        ; -0.554 ns ; MOP[2] ; Reset$latch           ; Clock    ;
+; N/A           ; None        ; -0.696 ns ; MOP[0] ; Load_B$latch          ; Clock    ;
+; N/A           ; None        ; -0.865 ns ; MOP[3] ; Input_Select[1]$latch ; Clock    ;
+; N/A           ; None        ; -1.073 ns ; MOP[3] ; Input_Select[2]$latch ; Clock    ;
+; N/A           ; None        ; -1.148 ns ; MOP[2] ; Input_Select[1]$latch ; Clock    ;
+; N/A           ; None        ; -1.322 ns ; MOP[2] ; Input_Select[2]$latch ; Clock    ;
+; N/A           ; None        ; -1.416 ns ; MOP[1] ; Input_Select[2]$latch ; Clock    ;
+; N/A           ; None        ; -1.646 ns ; MOP[0] ; Input_Select[1]$latch ; Clock    ;
+; N/A           ; None        ; -1.820 ns ; MOP[0] ; Input_Select[2]$latch ; Clock    ;
+; N/A           ; None        ; -1.871 ns ; MOP[2] ; Load_A$latch          ; Clock    ;
+; N/A           ; None        ; -1.884 ns ; MOP[3] ; Load_A$latch          ; Clock    ;
+; N/A           ; None        ; -2.147 ns ; MOP[1] ; Load_A$latch          ; Clock    ;
+; N/A           ; None        ; -2.301 ns ; MOP[0] ; Load_A$latch          ; Clock    ;
++---------------+-------------+-----------+--------+-----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon May 29 12:07:50 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off FSM -c FSM --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "Load_A$latch" is a latch
+    Warning: Node "Load_B$latch" is a latch
+    Warning: Node "Cin$latch" is a latch
+    Warning: Node "ALUOP[0]$latch" is a latch
+    Warning: Node "ALUOP[1]$latch" is a latch
+    Warning: Node "ALUOP[2]$latch" is a latch
+    Warning: Node "Input_Select[0]$latch" is a latch
+    Warning: Node "Input_Select[1]$latch" is a latch
+    Warning: Node "Input_Select[2]$latch" is a latch
+    Warning: Node "Reset$latch" is a latch
+    Warning: Node "out_state[0]$latch" is a latch
+    Warning: Node "out_state[1]$latch" is a latch
+    Warning: Node "out_state[2]$latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clock" is an undefined clock
+Warning: Found 6 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "Load_A~1" as buffer
+    Info: Detected ripple clock "y_present[0]" as buffer
+    Info: Detected ripple clock "y_present[1]" as buffer
+    Info: Detected ripple clock "y_present[4]" as buffer
+    Info: Detected ripple clock "y_present[2]" as buffer
+    Info: Detected ripple clock "y_present[3]" as buffer
+Info: Clock "Clock" Internal fmax is restricted to 500.0 MHz between source register "y_present[2]" and destination register "y_present[3]"
+    Info: fmax restricted to clock pin edge rate 2.0 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.443 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y23_N29; Fanout = 14; REG Node = 'y_present[2]'
+            Info: 2: + IC(0.463 ns) + CELL(0.366 ns) = 0.829 ns; Loc. = LCCOMB_X33_Y23_N0; Fanout = 2; COMB Node = 'Equal10~0'
+            Info: 3: + IC(0.305 ns) + CELL(0.309 ns) = 1.443 ns; Loc. = LCFF_X33_Y23_N9; Fanout = 14; REG Node = 'y_present[3]'
+            Info: Total cell delay = 0.675 ns ( 46.78 % )
+            Info: Total interconnect delay = 0.768 ns ( 53.22 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "Clock" to destination register is 2.319 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+                Info: 2: + IC(0.894 ns) + CELL(0.618 ns) = 2.319 ns; Loc. = LCFF_X33_Y23_N9; Fanout = 14; REG Node = 'y_present[3]'
+                Info: Total cell delay = 1.425 ns ( 61.45 % )
+                Info: Total interconnect delay = 0.894 ns ( 38.55 % )
+            Info: - Longest clock path from clock "Clock" to source register is 2.319 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+                Info: 2: + IC(0.894 ns) + CELL(0.618 ns) = 2.319 ns; Loc. = LCFF_X33_Y23_N29; Fanout = 14; REG Node = 'y_present[2]'
+                Info: Total cell delay = 1.425 ns ( 61.45 % )
+                Info: Total interconnect delay = 0.894 ns ( 38.55 % )
+        Info: + Micro clock to output delay of source is 0.094 ns
+        Info: + Micro setup delay of destination is 0.090 ns
+Warning: Circuit may not operate. Detected 65 non-operational path(s) clocked by clock "Clock" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "y_present[2]" and destination pin or register "out_state[0]$latch" for clock "Clock" (Hold time is 2.679 ns)
+    Info: + Largest clock skew is 3.602 ns
+        Info: + Longest clock path from clock "Clock" to destination register is 5.921 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+            Info: 2: + IC(0.894 ns) + CELL(0.712 ns) = 2.413 ns; Loc. = LCFF_X33_Y23_N15; Fanout = 14; REG Node = 'y_present[4]'
+            Info: 3: + IC(0.584 ns) + CELL(0.366 ns) = 3.363 ns; Loc. = LCCOMB_X34_Y23_N28; Fanout = 1; COMB Node = 'Load_A~1'
+            Info: 4: + IC(1.570 ns) + CELL(0.000 ns) = 4.933 ns; Loc. = CLKCTRL_G14; Fanout = 13; COMB Node = 'Load_A~1clkctrl'
+            Info: 5: + IC(0.935 ns) + CELL(0.053 ns) = 5.921 ns; Loc. = LCCOMB_X34_Y23_N4; Fanout = 1; REG Node = 'out_state[0]$latch'
+            Info: Total cell delay = 1.938 ns ( 32.73 % )
+            Info: Total interconnect delay = 3.983 ns ( 67.27 % )
+        Info: - Shortest clock path from clock "Clock" to source register is 2.319 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+            Info: 2: + IC(0.894 ns) + CELL(0.618 ns) = 2.319 ns; Loc. = LCFF_X33_Y23_N29; Fanout = 14; REG Node = 'y_present[2]'
+            Info: Total cell delay = 1.425 ns ( 61.45 % )
+            Info: Total interconnect delay = 0.894 ns ( 38.55 % )
+    Info: - Micro clock to output delay of source is 0.094 ns
+    Info: - Shortest register to register delay is 0.829 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X33_Y23_N29; Fanout = 14; REG Node = 'y_present[2]'
+        Info: 2: + IC(0.343 ns) + CELL(0.053 ns) = 0.396 ns; Loc. = LCCOMB_X34_Y23_N22; Fanout = 1; COMB Node = 'Load_B~3'
+        Info: 3: + IC(0.208 ns) + CELL(0.225 ns) = 0.829 ns; Loc. = LCCOMB_X34_Y23_N4; Fanout = 1; REG Node = 'out_state[0]$latch'
+        Info: Total cell delay = 0.278 ns ( 33.53 % )
+        Info: Total interconnect delay = 0.551 ns ( 66.47 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "Input_Select[2]$latch" (data pin = "MOP[0]", clock pin = "Clock") is 4.009 ns
+    Info: + Longest pin to register delay is 8.832 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_R9; Fanout = 15; PIN Node = 'MOP[0]'
+        Info: 2: + IC(4.611 ns) + CELL(0.346 ns) = 5.764 ns; Loc. = LCCOMB_X34_Y21_N16; Fanout = 2; COMB Node = 'ALUOP[2]~4'
+        Info: 3: + IC(0.861 ns) + CELL(0.228 ns) = 6.853 ns; Loc. = LCCOMB_X31_Y18_N10; Fanout = 1; COMB Node = 'Input_Select[2]~5'
+        Info: 4: + IC(1.096 ns) + CELL(0.357 ns) = 8.306 ns; Loc. = LCCOMB_X33_Y23_N4; Fanout = 1; COMB Node = 'Input_Select[2]~9'
+        Info: 5: + IC(0.301 ns) + CELL(0.225 ns) = 8.832 ns; Loc. = LCCOMB_X33_Y23_N16; Fanout = 1; REG Node = 'Input_Select[2]$latch'
+        Info: Total cell delay = 1.963 ns ( 22.23 % )
+        Info: Total interconnect delay = 6.869 ns ( 77.77 % )
+    Info: + Micro setup delay of destination is 0.526 ns
+    Info: - Shortest clock path from clock "Clock" to destination register is 5.349 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+        Info: 2: + IC(0.894 ns) + CELL(0.712 ns) = 2.413 ns; Loc. = LCFF_X33_Y23_N29; Fanout = 14; REG Node = 'y_present[2]'
+        Info: 3: + IC(0.345 ns) + CELL(0.053 ns) = 2.811 ns; Loc. = LCCOMB_X34_Y23_N28; Fanout = 1; COMB Node = 'Load_A~1'
+        Info: 4: + IC(1.570 ns) + CELL(0.000 ns) = 4.381 ns; Loc. = CLKCTRL_G14; Fanout = 13; COMB Node = 'Load_A~1clkctrl'
+        Info: 5: + IC(0.915 ns) + CELL(0.053 ns) = 5.349 ns; Loc. = LCCOMB_X33_Y23_N16; Fanout = 1; REG Node = 'Input_Select[2]$latch'
+        Info: Total cell delay = 1.625 ns ( 30.38 % )
+        Info: Total interconnect delay = 3.724 ns ( 69.62 % )
+Info: tco from clock "Clock" to destination pin "ALUOP[2]" through register "ALUOP[2]$latch" is 11.067 ns
+    Info: + Longest clock path from clock "Clock" to source register is 5.862 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+        Info: 2: + IC(0.894 ns) + CELL(0.712 ns) = 2.413 ns; Loc. = LCFF_X33_Y23_N15; Fanout = 14; REG Node = 'y_present[4]'
+        Info: 3: + IC(0.584 ns) + CELL(0.366 ns) = 3.363 ns; Loc. = LCCOMB_X34_Y23_N28; Fanout = 1; COMB Node = 'Load_A~1'
+        Info: 4: + IC(1.570 ns) + CELL(0.000 ns) = 4.933 ns; Loc. = CLKCTRL_G14; Fanout = 13; COMB Node = 'Load_A~1clkctrl'
+        Info: 5: + IC(0.876 ns) + CELL(0.053 ns) = 5.862 ns; Loc. = LCCOMB_X30_Y18_N16; Fanout = 1; REG Node = 'ALUOP[2]$latch'
+        Info: Total cell delay = 1.938 ns ( 33.06 % )
+        Info: Total interconnect delay = 3.924 ns ( 66.94 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 5.205 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X30_Y18_N16; Fanout = 1; REG Node = 'ALUOP[2]$latch'
+        Info: 2: + IC(3.243 ns) + CELL(1.962 ns) = 5.205 ns; Loc. = PIN_W16; Fanout = 0; PIN Node = 'ALUOP[2]'
+        Info: Total cell delay = 1.962 ns ( 37.69 % )
+        Info: Total interconnect delay = 3.243 ns ( 62.31 % )
+Info: th for register "ALUOP[1]$latch" (data pin = "MOP[3]", clock pin = "Clock") is 0.630 ns
+    Info: + Longest clock path from clock "Clock" to destination register is 5.918 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.807 ns) = 0.807 ns; Loc. = PIN_H9; Fanout = 5; CLK Node = 'Clock'
+        Info: 2: + IC(0.894 ns) + CELL(0.712 ns) = 2.413 ns; Loc. = LCFF_X33_Y23_N15; Fanout = 14; REG Node = 'y_present[4]'
+        Info: 3: + IC(0.584 ns) + CELL(0.366 ns) = 3.363 ns; Loc. = LCCOMB_X34_Y23_N28; Fanout = 1; COMB Node = 'Load_A~1'
+        Info: 4: + IC(1.570 ns) + CELL(0.000 ns) = 4.933 ns; Loc. = CLKCTRL_G14; Fanout = 13; COMB Node = 'Load_A~1clkctrl'
+        Info: 5: + IC(0.932 ns) + CELL(0.053 ns) = 5.918 ns; Loc. = LCCOMB_X34_Y23_N16; Fanout = 1; REG Node = 'ALUOP[1]$latch'
+        Info: Total cell delay = 1.938 ns ( 32.75 % )
+        Info: Total interconnect delay = 3.980 ns ( 67.25 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 5.288 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.827 ns) = 0.827 ns; Loc. = PIN_F8; Fanout = 18; PIN Node = 'MOP[3]'
+        Info: 2: + IC(3.805 ns) + CELL(0.225 ns) = 4.857 ns; Loc. = LCCOMB_X34_Y23_N18; Fanout = 1; COMB Node = 'ALUOP[2]~3'
+        Info: 3: + IC(0.206 ns) + CELL(0.225 ns) = 5.288 ns; Loc. = LCCOMB_X34_Y23_N16; Fanout = 1; REG Node = 'ALUOP[1]$latch'
+        Info: Total cell delay = 1.277 ns ( 24.15 % )
+        Info: Total interconnect delay = 4.011 ns ( 75.85 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 206 megabytes
+    Info: Processing ended: Mon May 29 12:07:51 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
